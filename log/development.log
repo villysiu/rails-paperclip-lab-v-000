@@ -532,3 +532,417 @@ Started GET "/songs/new" for ::1 at 2016-02-06 15:27:32 -0500
 Processing by SongsController#new as HTML
   Rendered songs/new.html.erb within layouts/application (359.5ms)
 Completed 200 OK in 378ms (Views: 370.0ms | ActiveRecord: 0.0ms)
+Started GET "/" for ::1 at 2021-06-05 11:24:16 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Villy/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Villy/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 22.9ms | Allocations: 415)
+Completed 200 OK in 35ms (Views: 30.0ms | ActiveRecord: 0.0ms | Allocations: 2203)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentAlbumCoverToSongs (20210605183337)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentAlbumCoverToSongs (20210605183337)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentAlbumCoverToSongs (20210605183337)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentAlbumCoverToSongs (20210605183337)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "songs" ADD "album_cover_file_name" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "songs" ADD "album_cover_content_type" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "songs" ADD "album_cover_file_size" bigint[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "songs" ADD "album_cover_updated_at" datetime[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210605183337"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-06-05 18:52:21.176083"], ["updated_at", "2021-06-05 18:52:21.176083"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/songs" for ::1 at 2021-06-05 12:12:22 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (2.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mArtist Load (1.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered songs/index.html.erb within layouts/application (Duration: 569.6ms | Allocations: 302911)
+  Rendered layout layouts/application.html.erb (Duration: 604.0ms | Allocations: 305282)
+Completed 200 OK in 640ms (Views: 609.3ms | ActiveRecord: 6.4ms | Allocations: 309302)
+
+
+Started GET "/artists/1" for ::1 at 2021-06-05 12:13:12 -0700
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 3249)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.0ms | Allocations: 3827)
+
+
+Started GET "/songs/1" for ::1 at 2021-06-05 12:13:21 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (Duration: 11.8ms | Allocations: 1017)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 4090)
+Completed 200 OK in 38ms (Views: 32.3ms | ActiveRecord: 1.0ms | Allocations: 4684)
+
+
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE (album_cover_file_name IS NOT NULL) ORDER BY "songs"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+Started GET "/songs" for ::1 at 2021-06-05 12:27:40 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+DEPRECATION WARNING: The asset "thumb/original/default.png" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from block in _app_views_songs_index_html_erb___333596289740675108_70272055577880 at /Users/Villy/Flatiron/code/rails-paperclip-lab-v-000/app/views/songs/index.html.erb:4)
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: The asset "thumb/original/default.png" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from block in _app_views_songs_index_html_erb___333596289740675108_70272055577880 at /Users/Villy/Flatiron/code/rails-paperclip-lab-v-000/app/views/songs/index.html.erb:4)
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered songs/index.html.erb within layouts/application (Duration: 469.2ms | Allocations: 296390)
+  Rendered layout layouts/application.html.erb (Duration: 510.9ms | Allocations: 301849)
+Completed 200 OK in 529ms (Views: 510.1ms | ActiveRecord: 5.0ms | Allocations: 305870)
+
+
+Started GET "/images/thumb/original/default.png" for ::1 at 2021-06-05 12:27:41 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/thumb/original/default.png"):
+  
+Started GET "/artists/2" for ::1 at 2021-06-05 12:27:45 -0700
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 3193)
+Completed 200 OK in 20ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 3767)
+
+
+Started GET "/songs/2" for ::1 at 2021-06-05 12:27:50 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+DEPRECATION WARNING: The asset "original/original/default.png" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_songs_show_html_erb___3627576815616885442_70272056202240 at /Users/Villy/Flatiron/code/rails-paperclip-lab-v-000/app/views/songs/show.html.erb:3)
+  Rendered songs/show.html.erb within layouts/application (Duration: 7.3ms | Allocations: 868)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 3972)
+Completed 200 OK in 27ms (Views: 21.5ms | ActiveRecord: 1.0ms | Allocations: 4551)
+
+
+Started GET "/images/original/original/default.png" for ::1 at 2021-06-05 12:27:50 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/original/default.png"):
+  
+Started GET "/songs" for ::1 at 2021-06-05 12:28:32 -0700
+Processing by SongsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering songs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered songs/index.html.erb within layouts/application (Duration: 38.3ms | Allocations: 10361)
+  Rendered layout layouts/application.html.erb (Duration: 52.4ms | Allocations: 13344)
+Completed 200 OK in 57ms (Views: 54.0ms | ActiveRecord: 3.8ms | Allocations: 14707)
+
+
+Started GET "/songs/1" for ::1 at 2021-06-05 12:29:57 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (Duration: 8.7ms | Allocations: 862)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 3937)
+Completed 200 OK in 25ms (Views: 20.0ms | ActiveRecord: 0.8ms | Allocations: 4406)
+
+
+Started GET "/" for ::1 at 2021-06-05 12:32:32 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Villy/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Villy/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.2ms | Allocations: 415)
+Completed 200 OK in 28ms (Views: 21.0ms | ActiveRecord: 0.0ms | Allocations: 2203)
+
+
+Started GET "/apple-touch-icon-precomposed.png" for ::1 at 2021-06-05 12:32:32 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  
+Started GET "/apple-touch-icon.png" for ::1 at 2021-06-05 12:32:32 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  
+Started GET "/" for ::1 at 2021-06-05 12:32:36 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Villy/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Villy/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.9ms | Allocations: 190)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 714)
+
+
+Started GET "/songs" for ::1 at 2021-06-05 12:32:37 -0700
+Processing by SongsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+DEPRECATION WARNING: The asset "thumb/default.png" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from block in _app_views_songs_index_html_erb___3838570038830449000_70140795307660 at /Users/Villy/Flatiron/code/rails-paperclip-lab-v-000/app/views/songs/index.html.erb:4)
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: The asset "thumb/default.png" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from block in _app_views_songs_index_html_erb___3838570038830449000_70140795307660 at /Users/Villy/Flatiron/code/rails-paperclip-lab-v-000/app/views/songs/index.html.erb:4)
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered songs/index.html.erb within layouts/application (Duration: 210.2ms | Allocations: 296019)
+  Rendered layout layouts/application.html.erb (Duration: 234.1ms | Allocations: 302757)
+Completed 200 OK in 250ms (Views: 233.9ms | ActiveRecord: 2.1ms | Allocations: 305546)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2021-06-05 12:32:37 -0700
+Started GET "/images/thumb/default.png" for ::1 at 2021-06-05 12:32:37 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/thumb/default.png"):
+  
+Started GET "/songs/1" for ::1 at 2021-06-05 12:32:46 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: The asset "original/default.png" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_songs_show_html_erb___3416362838535445108_70140845840420 at /Users/Villy/Flatiron/code/rails-paperclip-lab-v-000/app/views/songs/show.html.erb:3)
+  Rendered songs/show.html.erb within layouts/application (Duration: 6.3ms | Allocations: 816)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 3950)
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 0.7ms | Allocations: 4535)
+
+
+Started GET "/images/original/default.png" for ::1 at 2021-06-05 12:32:46 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/default.png"):
+  
+Started GET "/songs" for ::1 at 2021-06-05 12:35:05 -0700
+Processing by SongsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+DEPRECATION WARNING: The asset "thumb/default.png" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from block in _app_views_songs_index_html_erb___3838570038830449000_70140795307660 at /Users/Villy/Flatiron/code/rails-paperclip-lab-v-000/app/views/songs/index.html.erb:4)
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: The asset "thumb/default.png" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from block in _app_views_songs_index_html_erb___3838570038830449000_70140795307660 at /Users/Villy/Flatiron/code/rails-paperclip-lab-v-000/app/views/songs/index.html.erb:4)
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered songs/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 1407)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 4526)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.7ms | Allocations: 4770)
+
+
+Started GET "/images/thumb/default.png" for ::1 at 2021-06-05 12:35:05 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/thumb/default.png"):
+  
+Started GET "/songs" for ::1 at 2021-06-05 12:35:43 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered songs/index.html.erb within layouts/application (Duration: 440.3ms | Allocations: 298303)
+  Rendered layout layouts/application.html.erb (Duration: 462.2ms | Allocations: 301945)
+Completed 200 OK in 478ms (Views: 464.6ms | ActiveRecord: 2.8ms | Allocations: 305966)
+
+
+Started GET "/assets/thumb/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2021-06-05 12:35:43 -0700
+Started GET "/songs/1" for ::1 at 2021-06-05 12:36:24 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1013)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 4242)
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 0.4ms | Allocations: 4847)
+
+
+Started GET "/assets/original/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2021-06-05 12:36:24 -0700
+Started GET "/songs" for ::1 at 2021-06-05 12:37:12 -0700
+Processing by SongsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered songs/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 1498)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 4725)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 1.5ms | Allocations: 4969)
+
+
+Started GET "/songs" for ::1 at 2021-06-05 13:14:34 -0700
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered songs/index.html.erb within layouts/application (Duration: 44.1ms | Allocations: 13695)
+  Rendered layout layouts/application.html.erb (Duration: 478.8ms | Allocations: 301265)
+Completed 200 OK in 498ms (Views: 480.3ms | ActiveRecord: 2.3ms | Allocations: 305287)
+
+
+Started GET "/images/default_thumb_avatar.png" for ::1 at 2021-06-05 13:14:35 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/default_thumb_avatar.png"):
+  
+Started GET "/songs/1" for ::1 at 2021-06-05 13:15:05 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (Duration: 6.8ms | Allocations: 515)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 3793)
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 0.7ms | Allocations: 4398)
+
+
+Started GET "/images/default_original_avatar.png" for ::1 at 2021-06-05 13:15:05 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/default_original_avatar.png"):
+  
+Started GET "/artists/2" for ::1 at 2021-06-05 13:15:20 -0700
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3344)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 3912)
+
+
+Started GET "/songs/1" for ::1 at 2021-06-05 13:15:25 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 370)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 3642)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.4ms | Allocations: 3979)
+
+
+Started GET "/images/default_original_avatar.png" for ::1 at 2021-06-05 13:15:25 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/default_original_avatar.png"):
+  
+Started GET "/songs/1" for ::1 at 2021-06-05 13:16:44 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (Duration: 14.7ms | Allocations: 4704)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 7839)
+Completed 200 OK in 47ms (Views: 20.7ms | ActiveRecord: 2.2ms | Allocations: 14431)
+
+
+Started GET "/songs" for ::1 at 2021-06-05 13:17:01 -0700
+Processing by SongsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered songs/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 1514)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 4738)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 1.1ms | Allocations: 4972)
+
+
+Started GET "/songs" for ::1 at 2021-06-05 13:17:26 -0700
+Processing by SongsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering songs/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered songs/index.html.erb within layouts/application (Duration: 35.5ms | Allocations: 10309)
+  Rendered layout layouts/application.html.erb (Duration: 42.0ms | Allocations: 13441)
+Completed 200 OK in 51ms (Views: 46.3ms | ActiveRecord: 4.7ms | Allocations: 14794)
+
+
+Started GET "/songs/1" for ::1 at 2021-06-05 13:18:55 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (Duration: 20.9ms | Allocations: 4702)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 7837)
+Completed 200 OK in 60ms (Views: 29.7ms | ActiveRecord: 4.3ms | Allocations: 14364)
+
+
