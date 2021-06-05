@@ -1,8 +1,13 @@
 <ul>
 <% @songs.each do |song| %>
   <li>
-  <%= image_tag song.album_cover.url(:thumb) %>
-  <% puts "hello"%>
+ 
+
+  <% if song.album_cover.url(:thumb) != nil %>
+
+    <%= image_tag song.album_cover.url(:thumb) %>
+  <% end %>
+
   <%= display_artist(song) %> - <%= link_to song.title, song_path(song) %>
   </li>
 <% end %>
